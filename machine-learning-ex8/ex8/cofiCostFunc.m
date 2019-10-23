@@ -48,6 +48,17 @@ X_grad = (((Theta * X')' .* R) - Y) * Theta;
 Theta_grad = (((Theta * X')' .* R) - Y)' * X;
 
 
+%Regularization
+
+%Regularized term of Theta
+tr = (sum(sum(Theta .^2 )) * lambda) / 2;
+
+%Regularized term of X
+xr = (sum(sum(X .^2 )) * lambda) / 2;
+
+% Cost function J regularized
+J = J + tr + xr;
+
 
 
 
