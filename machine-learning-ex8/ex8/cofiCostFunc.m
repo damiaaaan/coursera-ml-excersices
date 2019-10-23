@@ -59,7 +59,11 @@ xr = (sum(sum(X .^2 )) * lambda) / 2;
 % Cost function J regularized
 J = J + tr + xr;
 
+%Regularized X_grad
+X_grad = X_grad + (lambda .* X);
 
+%Regularized Theta_grad
+Theta_grad = Theta_grad + (lambda .* Theta); 
 
 
 
